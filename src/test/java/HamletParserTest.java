@@ -18,6 +18,10 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
+        assertTrue(hamletText.contains("HAMLET"));
+        assertTrue(hamletText.contains("Hamlet"));
+        assertFalse(hamletText.contains("LEON"));
+        assertFalse(hamletText.contains("Leon"));
         hamletText = hamletParser.replaceText("Hamlet", hamletText, "Leon");
         hamletText = hamletParser.replaceText("HAMLET", hamletText, "LEON");
         assertFalse(hamletText.contains("HAMLET"));
@@ -28,6 +32,10 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHoratioToTariq() {
+        assertTrue(hamletText.contains("Horatio"));
+        assertTrue(hamletText.contains("HORATIO"));
+        assertFalse(hamletText.contains("Tariq"));
+        assertFalse(hamletText.contains("TARIQ"));
         hamletText = hamletParser.replaceText("Horatio", hamletText, "Tariq");
         hamletText = hamletParser.replaceText("HORATIO", hamletText, "TARIQ");
         assertFalse(hamletText.contains("Horatio"));

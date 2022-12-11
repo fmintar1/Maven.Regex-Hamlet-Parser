@@ -14,13 +14,6 @@ public class HamletParser {
     public HamletParser(){
         this.hamletData = loadFile();
     }
-
-    public static void main(String[] args) {
-        HamletParser parser = new HamletParser();
-        System.out.println(parser.getHamletData().replaceAll("(?i)Hamlet","Leon"));
-        System.out.println(parser.getHamletData().replaceAll("(?i)Horatio","Tariq"));
-
-    }
     private String loadFile(){
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("hamlet.txt").getFile());
